@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+poi = Note.create(title: "Programming 1")
+
+poi_note_info = PoiNoteInfo.create(note_id: poi.id)

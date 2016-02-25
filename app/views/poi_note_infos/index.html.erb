@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Poi Note Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Note</th>
+      <th>Description detail</th>
+      <th>Poi info</th>
+      <th>Poi info type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poi_note_infos.each do |poi_note_info| %>
+      <tr>
+        <td><%= poi_note_info.note %></td>
+        <td><%= poi_note_info.description_detail %></td>
+        <td><%= poi_note_info.poi_info_id %></td>
+        <td><%= poi_note_info.poi_info_type %></td>
+        <td><%= link_to 'Show', poi_note_info %></td>
+        <td><%= link_to 'Edit', edit_poi_note_info_path(poi_note_info) %></td>
+        <td><%= link_to 'Destroy', poi_note_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poi note info', new_poi_note_info_path %>

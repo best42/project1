@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @poi_note_info.note %>
+</p>
+
+<p>
+  <strong>Description detail:</strong>
+  <%= @poi_note_info.description_detail %>
+</p>
+
+<p>
+  <strong>Poi info:</strong>
+  <%= @poi_note_info.poi_info_id %>
+</p>
+
+<p>
+  <strong>Poi info type:</strong>
+  <%= @poi_note_info.poi_info_type %>
+</p>
+
+<%= link_to 'Edit', edit_poi_note_info_path(@poi_note_info) %> |
+<%= link_to 'Back', poi_note_infos_path %>
