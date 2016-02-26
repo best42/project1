@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225225207) do
+ActiveRecord::Schema.define(version: 20160226022316) do
 
   create_table "notes", force: :cascade do |t|
     t.string   "title"
@@ -22,8 +22,12 @@ ActiveRecord::Schema.define(version: 20160225225207) do
     t.text     "owner"
     t.date     "create_note"
     t.text     "image_note"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "poi_note_infos", force: :cascade do |t|
