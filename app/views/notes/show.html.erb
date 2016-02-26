@@ -37,7 +37,8 @@
 
 <p>
   <strong>Image note:</strong>
-  <%= @note.image_note %>
+  <p></p>
+  <%= image_tag @note.image.url %>
 </p>
 
 <%= link_to 'Edit', edit_note_path(@note) %> |

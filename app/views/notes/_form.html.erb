@@ -1,4 +1,4 @@
-<%= form_for(@note) do |f| %>
+<%= form_for @note, html: { multipart: true } do |f| %>
   <% if @note.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -45,18 +45,25 @@
           <input type="date" class="datepicker"> <%= f.date_select :create_note %> </input>
         </div>
 
-        <form action="#">
+        <div class="field">
+            <%= f.label :image  %><br>
+            <%= f.file_field :image %>
+        </div>
+        <br>
+
+        <!-- <form action="#">
           <div class="file-field input-field ">
             <div class="btn blue">
               <span>File</span>
+              <%= f.label :image  %><br>
               <input type="file" multiple> <%= f.file_field :image %> </input>
             </div>
             <div class="file-path-wrapper ">
-              <input class="file-path validate " type="text" placeholder="Upload files here">
+              <input class="file-path validate " type="text"> <%= f.label :image %></input>
             </div>
           </div>
         </form>
-        <br>
+        <br> -->
 
         <div class="btn waves-effect waves-light" type="submit" name="action">
           <%= f.submit %>

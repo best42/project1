@@ -3,6 +3,7 @@ rails g scaffold note title:string description:text subject:string teacher:text 
 rails g scaffold PoiNoteInfo note:references description_detail:text poi_info_id:integer:index poi_info_type:string:index
 
 rails g paperclip note image
+rails g paperclip PoiNoteInfo image
 
 
 # ------ To Delete ----------

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226035329) do
+ActiveRecord::Schema.define(version: 20160226063445) do
 
   create_table "models", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -55,6 +55,10 @@ ActiveRecord::Schema.define(version: 20160226035329) do
     t.string   "poi_info_type"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "poi_note_infos", ["note_id"], name: "index_poi_note_infos_on_note_id"

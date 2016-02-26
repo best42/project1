@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_model!, only: [:new, :edit, :update, :destroy]
 
   # GET /notes
   # GET /notes.json
@@ -10,6 +11,7 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
+    @note = Note.find(params[:id])
   end
 
   # GET /notes/new
@@ -69,6 +71,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:title, :description, :subject, :teacher, :rating, :owner, :create_note, :image_note)
+      params.require(:note).permit(:title, :description, :subject, :teacher, :rating, :owner, :create_note, :image_note, :image)
     end
 end

@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   resources :notes
   resources :poi_note_infos
 
-  get '/home' => 'notes#index'
+  # get '/note' => 'notes#index'
+  # get '/info_note' => 'notes#show_note'
   get '/contact' => 'page#contact'
+
+
+  resources :notes, only: [:index, :show]
 
   devise_for :models
   root 'notes#index'
