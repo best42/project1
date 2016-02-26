@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225195449) do
+ActiveRecord::Schema.define(version: 20160225225207) do
 
   create_table "notes", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image_url"
-    t.string   "category"
+    t.string   "subject"
+    t.text     "teacher"
     t.integer  "rating"
     t.text     "owner"
-    t.datetime "create_note"
+    t.date     "create_note"
+    t.text     "image_note"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

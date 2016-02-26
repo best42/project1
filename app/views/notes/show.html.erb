@@ -11,13 +11,13 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @note.image_url %>
+  <strong>Subject:</strong>
+  <%= @note.subject %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @note.category %>
+  <strong>Teacher:</strong>
+  <%= @note.teacher %>
 </p>
 
 <p>
@@ -33,6 +33,11 @@
 <p>
   <strong>Create note:</strong>
   <%= @note.create_note %>
+</p>
+
+<p>
+  <strong>Image note:</strong>
+  <%= @note.image_note %>
 </p>
 
 <%= link_to 'Edit', edit_note_path(@note) %> |

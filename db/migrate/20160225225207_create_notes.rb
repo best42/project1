@@ -3,11 +3,12 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :title
       t.text :description
-      t.string :image_url
-      t.string :category
+      t.string :subject
+      t.text :teacher
       t.integer :rating
       t.text :owner
-      t.datetime :create_note
+      t.date :create_note
+      t.text :image_note
 
       t.timestamps null: false
     end

@@ -1,19 +1,3 @@
-# == Schema Information
-#
-# Table name: notes
-#
-#  id          :integer          not null, primary key
-#  title       :string
-#  description :text
-#  image_url   :string
-#  category    :string
-#  rating      :integer
-#  owner       :text
-#  create_note :datetime
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#
-
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
@@ -85,6 +69,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:title, :description, :image_url, :category, :rating, :owner, :create_note)
+      params.require(:note).permit(:title, :description, :subject, :teacher, :rating, :owner, :create_note, :image_note)
     end
 end

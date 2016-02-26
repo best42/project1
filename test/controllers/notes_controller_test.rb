@@ -1,19 +1,3 @@
-# == Schema Information
-#
-# Table name: notes
-#
-#  id          :integer          not null, primary key
-#  title       :string
-#  description :text
-#  image_url   :string
-#  category    :string
-#  rating      :integer
-#  owner       :text
-#  create_note :datetime
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#
-
 require 'test_helper'
 
 class NotesControllerTest < ActionController::TestCase
@@ -34,7 +18,7 @@ class NotesControllerTest < ActionController::TestCase
 
   test "should create note" do
     assert_difference('Note.count') do
-      post :create, note: { category: @note.category, create_note: @note.create_note, description: @note.description, image_url: @note.image_url, owner: @note.owner, rating: @note.rating, title: @note.title }
+      post :create, note: { create_note: @note.create_note, description: @note.description, image_note: @note.image_note, owner: @note.owner, rating: @note.rating, subject: @note.subject, teacher: @note.teacher, title: @note.title }
     end
 
     assert_redirected_to note_path(assigns(:note))
@@ -51,7 +35,7 @@ class NotesControllerTest < ActionController::TestCase
   end
 
   test "should update note" do
-    patch :update, id: @note, note: { category: @note.category, create_note: @note.create_note, description: @note.description, image_url: @note.image_url, owner: @note.owner, rating: @note.rating, title: @note.title }
+    patch :update, id: @note, note: { create_note: @note.create_note, description: @note.description, image_note: @note.image_note, owner: @note.owner, rating: @note.rating, subject: @note.subject, teacher: @note.teacher, title: @note.title }
     assert_redirected_to note_path(assigns(:note))
   end
 

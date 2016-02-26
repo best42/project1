@@ -11,75 +11,60 @@
     </div>
   <% end %>
 
-<div class="section no-pad-bot">
-  <div class="container">
-    <div class="row main-text-color">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row main-text-color">
 
-      <div class="field">
-        <%= f.label :Title %><br>
-        <%= f.text_field :title %>
-      </div>
-
-      <div class="field">
-        <%= f.label :Description %><br>
-        <%= f.text_area :description %>
-      </div>
-
-      <div class="field">
-        <%= f.label :category %><br>
-        <%= f.text_field :category %>
-      </div>
-      <div class="field">
-        <select id="rating">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-        <!-- <%= f.label :rating %><br>
-        <%= f.number_field :rating %> -->
-      </div>
-
-      <div class="field">
-        <i class="material-icons prefix">account_circle</i>
-        <%= f.label :owner %><br>
-        <%= f.text_field :owner %>
-      </div>
-
-      <div >
-        <%= f.label :Date_Time %><br>
-        <input type="date" class="datepicker"> <%= f.datetime_select :create_note %> </input>
-        <!-- <%= f.label :Date_Time %><br> -->
-        <!-- <%= f.datetime_select :create_note %> -->
-      </div>
-
-      <!-- <div class="field">
-        <%= f.label :Image_Note %><br>
-        <%= f.text_field :image_url %>
-      </div> -->
-
-      <form action="#">
-        <div class="file-field input-field ">
-          <div class="btn blue darken-4">
-            <span>File</span>
-            <input type="file" multiple> <%= f.file_field :image %> </input>
-          </div>
-          <div class="file-path-wrapper ">
-            <input class="file-path validate " type="text" placeholder="Upload files here">
-          </div>
+        <div class="field">
+          <%= f.label :Title %><br>
+          <%= f.text_field :title %>
         </div>
-      </form>
-      <br>
 
-      <div class="btn waves-effect waves-light" type="submit" name="action">
-        <%= f.submit %>
-        <i class="material-icons left">+</i>
+        <div class="field">
+          <%= f.label :Description %><br>
+          <%= f.text_area :description %>
+        </div>
+
+        <div class="field">
+          <%= f.label :subject %><br>
+          <%= f.text_field :subject %>
+        </div>
+
+        <div class="field">
+          <%= f.label :teacher %><br>
+          <%= f.text_field :teacher %>
+        </div>
+
+        <div class="field">
+          <%= f.label :owner, class:"fa fa-user"  %><br>
+          <%= f.text_field :owner %>
+        </div>
+
+        <div>
+          <%= f.label :Date %><br>
+          <input type="date" class="datepicker"> <%= f.date_select :create_note %> </input>
+        </div>
+
+        <form action="#">
+          <div class="file-field input-field ">
+            <div class="btn blue">
+              <span>File</span>
+              <input type="file" multiple> <%= f.file_field :image %> </input>
+            </div>
+            <div class="file-path-wrapper ">
+              <input class="file-path validate " type="text" placeholder="Upload files here">
+            </div>
+          </div>
+        </form>
+        <br>
+
+        <div class="btn waves-effect waves-light" type="submit" name="action">
+          <%= f.submit %>
+          <i class="material-icons left">+</i>
+        </div>
+
       </div>
-
     </div>
   </div>
-</div>
-
 
 <% end %>

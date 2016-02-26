@@ -1,59 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<!-- <div class="pure-menu pure-menu-horizontal">
-    <a href="#" class="pure-menu-heading pure-menu-link">Home</a>
-    <ul class="pure-menu-list">
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Notes</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact Us</a></li>
-        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Log in</a></li>
-    </ul>
-</div> -->
-
-<nav>
-  <div class="nav-wrapper">
-    <a href="" class="brand-logo">Home</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a href="">Notes</a></li>
-      <li><a href="">Contact Us</a></li>
-      <li><a href="">Log in</a></li>
-    </ul>
+<div class="container">
+  <div class="center">
+    <img src="/assets/images/lect.jpg" class="responsive-img" style="max-height: 100px;"/>
   </div>
-</nav>
 
-<h1>Listing Notes</h1>
+  <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Category</th>
-      <th>Rating</th>
-      <th>Owner</th>
-      <th>Create note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Listing Notes</h1>
 
-  <tbody>
-    <% @notes.each do |note| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= note.title %></td>
-        <td><%= note.description %></td>
-        <td><%= note.image_url %></td>
-        <td><%= note.category %></td>
-        <td><%= note.rating %></td>
-        <td><%= note.owner %></td>
-        <td><%= note.create_note %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Subject</th>
+        <th>Teacher</th>
+        <th>Rating</th>
+        <th>Owner</th>
+        <th>Create note</th>
+        <th>Image note</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @notes.each do |note| %>
+        <tr>
+          <td><%= note.title %></td>
+          <td><%= note.description %></td>
+          <td><%= note.subject %></td>
+          <td><%= note.teacher %></td>
+          <td><%= note.rating %></td>
+          <td><%= note.owner %></td>
+          <td><%= note.create_note %></td>
+          <td><%= note.image_note %></td>
+          <td><%= link_to 'Show', note %></td>
+          <td><%= link_to 'Edit', edit_note_path(note) %></td>
+          <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
 
 <%= link_to 'New Note', new_note_path %>
