@@ -2,6 +2,8 @@ Rails.application.configure do
 
   # To make uploading activate
   Paperclip.options[:command_path] = "/usr/local/bin/"
+  # For make log in
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

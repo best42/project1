@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :poi_note_infos
 
   get '/home' => 'notes#index'
-  # get '/note/'
-  get '/page/contact' => 'page#contact'
+  get '/contact' => 'page#contact'
+
+  devise_for :models
+  root 'notes#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
